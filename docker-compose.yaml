@@ -41,3 +41,5 @@ services:
       - front-end
 networks:
   proj-net:
+volumes:
+  proj-vol:

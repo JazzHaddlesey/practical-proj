@@ -2,4 +2,4 @@ flask
 requests
 pytest
 pytest-cov
-name
+names
