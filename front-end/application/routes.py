@@ -4,7 +4,7 @@ import requests
 
 @app.route('/')
 def index():
-    chars = requests.get('http://rand-name-gen:5000/get_name').text
+    name = requests.get('http://rand-name-gen:5000/get_name').text
     nums = requests.get('http://rand-num-gen:5000/get_num').text
-    prize = requests.post('http://race-gen:5000/race', json = dict(chars = chars, nums = nums))
-    return render_template('home.html', prize = prize.text)
+    race = requests.post('http://race-gen:5000/race', json = dict(nums = nums))
+    return render_template('home.html', race = race.text)

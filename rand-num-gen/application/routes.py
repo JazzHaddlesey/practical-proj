@@ -1,7 +1,8 @@
 from application import app
 from flask import render_template
-import requests
+from random import randint
 
-@app.route('/')
-def index():
-    pass
+@app.route('/get_num', methods = ['GET'])
+def num_gen():
+    nums = randint(0, 180)
+    return str(nums)
