@@ -3,9 +3,11 @@ services:
   service-1:
     image: web-front-end:v1
     build: ./front-end
-    container_name: front-end
+    # container_name: front-end
     networks: 
       - proj-net
+    deploy:
+      replicas: 3
   service-2:
     image: name-generator:v1
     build: ./rand-name-gen
@@ -41,5 +43,3 @@ services:
       - front-end
 networks:
   proj-net:
-volumes:
-  proj-vol:
