@@ -5,4 +5,5 @@ import names
 
 @app.route('/')
 def index():
-    pass
+    full_name = names.get_full_name()
+    return full_name
