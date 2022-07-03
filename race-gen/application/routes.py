@@ -2,8 +2,8 @@ from application import app
 from flask import render_template, request
 
 
-@app.route('/race', methods = ['GET'])
-def race_gen():
+@app.route('/get_race', methods = ['GET'])
+def get_race():
     data_sent = request.get_json()
     if data_sent['nums'] > 0 and data_sent['nums'] < 20:
         return "Dwarf"

@@ -1,41 +1,41 @@
-version: '3.6'
+version: '3.8'
 services:
-  service-1:
-    image: web-front-end:v1
+  front-end:
+    container_name: front-end
+    image: front-end:v1
     build: ./front-end
-    # container_name: front-end
     networks: 
       - proj-net
-    deploy:
-      replicas: 3
-  service-2:
+    # deploy:
+    #   replicas: 3
+  rand-name-gen:
+    container_name: rand-name-gen
     image: name-generator:v1
     build: ./rand-name-gen
-    container_name: name-gen
     networks: 
       - proj-net
-  service-3:
+  rand-num-gen:
+    container_name: rand-num-gen
     image: num-generator:v1
     build: ./rand-num-gen
-    container_name: num-gen
     networks: 
       - proj-net
-  service-4:
+  race-gen:
+    container_name: race-gen
     image: race-generator:v1
     build: ./race-gen
-    container_name: race-gen
     networks: 
       - proj-net
   nginx:
-    image: nginx:latest
     container_name: nginx
+    image: nginx:latest
     networks:
       - proj-net
     volumes:
       - type: bind
         source: ./nginx.conf
-        target: /ect/nginx/nginx.conf
-    ports: 
+        target: /etc/nginx/nginx.conf
+    ports:
       - target: 80
         published: 80
         protocol: tcp

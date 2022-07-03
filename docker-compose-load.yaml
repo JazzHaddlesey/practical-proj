@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    networks:
+      - proj-net
+    volumes:
+      - type: bind
+        source: ./nginx-laod.conf
+        target: /etc/nginx-load.conf
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+    depends_on:
+      - front-end
+networks:
+  proj-net:
