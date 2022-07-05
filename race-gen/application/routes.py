@@ -1,26 +1,27 @@
 from application import app
-from flask import render_template, request
+from flask import request
 
 
-@app.route('/get_race', methods = ['GET'])
+@app.route('/get_race', methods = ['POST'])
 def get_race():
     data_sent = request.get_json()
-    if data_sent['nums'] > 0 and data_sent['nums'] < 20:
-        return "Dwarf"
-    elif data_sent['nums'] >= 21 and data_sent['nums'] < 40:
-        return "Elf"
-    elif data_sent['nums'] >= 41 and data_sent['nums'] < 60:
-        return "Hafling"
-    elif data_sent['nums'] >= 61 and data_sent['nums'] < 80:
-        return "Human"
-    elif data_sent['nums'] >= 81 and data_sent['nums'] < 100:
-        return "Dragonborn"
-    elif data_sent['nums'] >= 101 and data_sent['nums'] < 120:
-        return "Gnome"
-    elif data_sent['nums'] >= 121 and data_sent['nums'] < 140:
-        return "Half-Elf"
-    elif data_sent['nums'] >= 141 and data_sent['nums'] < 160:
-        return "Half-Orc"
-    elif data_sent['nums'] >= 161 and data_sent['nums'] < 180:
-        return "Tiefling"
+    int_data = int(data_sent['nums'])
+    if int_data > 0 and int_data < 20:
+        return str("Dwarf")
+    elif int_data >= 21 and int_data < 40:
+        return str("Elf")
+    elif int_data >= 41 and int_data < 60:
+        return str("Hafling")
+    elif int_data >= 61 and int_data < 80:
+        return str("Human")
+    elif int_data >= 81 and int_data < 100:
+        return str("Dragonborn")
+    elif int_data >= 101 and int_data < 120:
+        return str("Gnome")
+    elif int_data >= 121 and int_data < 140:
+        return str("Half-Elf")
+    elif int_data >= 141 and int_data < 160:
+        return str("Half-Orc")
+    elif int_data >= 161 and int_data < 180:
+        return str("Tiefling")
         
