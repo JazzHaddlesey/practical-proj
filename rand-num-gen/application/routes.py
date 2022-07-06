@@ -3,5 +3,5 @@ from random import randint
 
 @app.route('/get_nums', methods = ['GET'])
 def get_nums():
-    nums = randint(0, 180)
+    nums = randint(1, 179)
     return str(nums)
