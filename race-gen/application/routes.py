@@ -24,4 +24,16 @@ def get_race():
         return str("Half-Orc")
     elif int_data >= 161 and int_data < 180:
         return str("Tiefling")
+    # elif int_data >= 181 and int_data < 200:
+    #     return str("Centaur")
+    # elif int_data >= 201 and int_data < 220:
+    #     return str("Changeling")
+    # elif int_data >= 221 and int_data < 240:
+    #     return str("Fairy")
+    # elif int_data >= 241 and int_data < 260:
+    #     return str("Eladrin")
+    # elif int_data >= 261 and int_data < 280:
+    #     return str("Goliath")
+    
+
         
