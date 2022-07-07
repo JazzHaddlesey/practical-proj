@@ -1,31 +1,37 @@
 version: '3.6'
 services:
   front-end:
-    container_name: front-end
+    # container_name: front-end
     image: front-end:v1
     build: ./front-end
     networks: 
       - proj-net
-    # deploy:
-    #   replicas: 3
+    deploy:
+      replicas: 3
   rand-name-gen:
-    container_name: rand-name-gen
+    # container_name: rand-name-gen
     image: name-generator:v1
     build: ./rand-name-gen
     networks: 
       - proj-net
+    deploy:
+      replicas: 3
   rand-num-gen:
-    container_name: rand-num-gen
+    # container_name: rand-num-gen
     image: num-generator:v1
     build: ./rand-num-gen
     networks: 
       - proj-net
+    deploy:
+      replicas: 3
   race-gen:
     container_name: race-gen
     image: race-generator:v1
     build: ./race-gen
     networks: 
       - proj-net
+    deploy:
+      replicas: 3
   nginx:
     container_name: nginx
     image: nginx:latest
