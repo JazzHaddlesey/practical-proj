@@ -1,0 +1,15 @@
+pipeline {
+    agent 'tester'
+    stages {
+        stage('Test') {
+            steps {
+                //
+                git branch: 'dev', url: 'https://github.com/JazzHaddlesey/practical-proj.git'
+                sh '''#!/bin/bash
+                pip3 install -r requirements
+                python3 -m pytest
+                '''
+            }
+        }
+    }
+}
