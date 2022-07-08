@@ -6,7 +6,6 @@ pipeline {
                 //
                 git branch: 'dev', url: 'https://github.com/JazzHaddlesey/practical-proj.git'
                 sh '''#!/bin/bash
-                cd front-end
                 python3 -m pytest
                 '''
             }

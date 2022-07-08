@@ -1,0 +1,8 @@
+- hosts: localhost
+  tasks: 
+  - name: "ensure nginx has started and is enabled"
+    systemd: 
+      name: nginx.service
+      state: started
+      enabled: yes
+
