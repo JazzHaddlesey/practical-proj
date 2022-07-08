@@ -6,7 +6,7 @@ pipeline {
                 //
                 git branch: 'dev', url: 'https://github.com/JazzHaddlesey/practical-proj.git'
                 sh '''#!/bin/bash
-                pip3 install -r requirements.txt
+                cd front-end
                 python3 -m pytest
                 '''
             }
